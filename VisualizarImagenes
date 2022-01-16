@@ -1,3 +1,5 @@
+//Para este Script, se necesita como entrada un un area de interes llamada geometry3
+
 var col = ee.ImageCollection ('COPERNICUS/S2')
   .filterDate ('2020-01-01', '2022-01-01')
   .filterBounds(geometry3)
