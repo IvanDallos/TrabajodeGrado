@@ -1,0 +1,26 @@
+var col = ee.ImageCollection ('COPERNICUS/S2')
+  .filterDate ('2020-01-01', '2022-01-01')
+  .filterBounds(geometry3)
+  .filterMetadata ('CLOUDY_PIXEL_PERCENTAGE', 'Less_Than', 50)
+  .map(function(i){return i.clip(geometry3)});
+
+print(col)
+
+var Majajanga = function(image) {
+  var opera1 = image.select('B2').multiply(3).rename('Maja2');
+  var opera2 = image.select('B4').multiply(5).rename('Maja4');
+  var opera3 = image.select('B8').multiply(2).rename('Maja8');
+  return image.addBands([opera2,opera3,opera1]);
+};
+
+var Nuevo = col.map(Majajanga);
+var vispar = {bands:['Maja4','Maja8','Maja2'], min:500, max: 7000,gamma: 0.5};
+//var vispar = {bands:['B4','B3','B2'], min:8228.9, max: 17396.2,gamma: 1.2};
+//var vispar = {bands:['B3','B2','B1'], min:0.043, max: 0.3560,gamma: 1};
+//var vispar = {bands:['probando'], min:0, max:100,gamma: 1};
+
+//var gif = Nuevo.getVideoThumbURL(vispar);//hace un gif
+var Imag = Nuevo.getFilmstripThumbURL(vispar);//imprime todas las imagenes como fots
+//var vispar = {bands:['B4', 'B3', 'B2'],min:472, max: 2096,gamma: 1};
+//Map.addLayer (Nuevo, {bands:['B3','B2','B1'], max: 0.3560, min: 0.043, gamma: 1},'RGB 482');
+print(Imag)//'B2','B3','B4','B5'//'B5','B6','B7','B8']
