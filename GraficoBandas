@@ -1,0 +1,21 @@
+var col = ee.ImageCollection ('COPERNICUS/S2')
+  .filterDate ('2019-01-01', '2020-01-01')
+  .filterBounds(geometry)
+  .filterMetadata ('CLOUDY_PIXEL_PERCENTAGE', 'Less_Than', 100)
+  .map(function(i){return i.clip(geometry)});
+
+print(col)
+
+col = col.map(function(i){return i.select(['B1','B2','B3','B4','B5','B6','B7','B8','B8A','B9','B10','B11','B12'])});
+
+var Grafico =
+    ui.Chart.image
+        .series({
+          imageCollection: col, 
+          
+          region: geometry,
+          reducer: ee.Reducer.median(),//mediana y reportar desv estandar
+          scale: 100,
+          xProperty: 'system:time_start'
+        });
+print(Grafico);
