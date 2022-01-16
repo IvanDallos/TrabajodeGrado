@@ -1,3 +1,5 @@
+//Para este Script se necesita un arreglo de puntos sobre el area de interes llamados geometry
+
 var col = ee.ImageCollection ('COPERNICUS/S2')
   .filterDate ('2019-01-01', '2020-01-01')
   .filterBounds(geometry)
