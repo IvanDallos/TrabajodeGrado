@@ -2,8 +2,9 @@
 
 En este repositorio se encuentran los principales script que se utilizaron para la elaboración del trabajo de grado.
 
-AnalisisRelaciones.m:
-AnalisisReportes.m:
+AnalisisCodigo4: Código de matlab utilizado para la elaboración de la justicicación del proyecto. Indica las veces, horas de afección y cantidad de usuarios afectados con el codigo 4. Es necesario indicar el año y la tabla de reportes de la SUI como entradas. Hace un llamado de AnalisisReportes.m
+
+AnalisisReportes.m: Realiza un análisis a los reportes de la SUI de todos los codigos para que sean más faciles de leer.  Es necesario indicar la tabla de reportes de la SUI.
 
 CTERelacionBanda.m: Código de matlab utilizado para adquirir las constantes de las relaciones de banda adquiridas en RelacionBanda.m y MasRelacionBanda.m. Se debe ejecutar desde RelacionBanda.m.
 
@@ -17,6 +18,7 @@ MasRelacionBanda.m: Código de matlab utilizado para adquirir 2 relaciones de ba
 
 RelacionBanda.m:  Código de matlab utilizado para análisar e indicar resultados del proyecto. Necesita la relación de banda establecida y la ecuación de turbidez.
 
+ReportesSUI.xlsx: Contiene la base de datos de los reportes de la SUI desde el año 2009 hasta el 2020. Necesaria para ejecutar AnalisisCodigo4.m y AnalisisReportes.m.
+
 VisualizarImagenes: Código de Google Earth Engine el cual permite descargar las imágenes satelitales en un periodo de tiempo establecido para análisis individual.
 
-En el github hace falta poner un README.txt que explique como se usan los rutinas y tenga una descripción de los datos.
