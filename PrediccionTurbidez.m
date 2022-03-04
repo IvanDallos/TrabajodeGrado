@@ -116,7 +116,4 @@ xlabel("Fecha");
 ylabel("Turbidez (NTU)");
 title("Comparación Dato Turbidez - Modelo Doble")
 
-%R2 entre más cerca a 1 mejor
-%RMSE entre más cerca a 0 mejor
-
 end
