@@ -24,4 +24,4 @@ VisualizarImagenes: Código de Google Earth Engine el cual permite descargar las
 
 PrediccionTurbidez: Script final que predice turbidez según información de bandas satelitales dadas. Las ecuaciones presentes en este script son obtenidas de acuerdo con scripts anteriores como lo son RelacionBanda, MasRelacionBanda, CTERelacionBanda.
 
-
+#Victor Cordoba e Iván Dallos
